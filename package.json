@@ -1,3 +1,13 @@
-"scripts": {
-  "start": "node app.js"
-},
+{
+  "name": "godly-proxies",
+  "version": "1.0.0",
+  "description": "Godly Proxies V - Proxy Search Website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.26.0"
+  }
+}
