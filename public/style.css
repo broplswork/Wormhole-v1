@@ -1,24 +1,24 @@
-#settings-link {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  color: #007bff;
+body {
+  cursor: none; /* Hide the default cursor */
 }
 
-#settings-container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
+#custom-cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  mix-blend-mode: difference; /* Enhances the color effect */
+  pointer-events: none; /* Ensure the custom cursor doesn't interfere with interactions */
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#settings-container h2 {
-  text-align: center;
-  margin-bottom: 10px;
 }
