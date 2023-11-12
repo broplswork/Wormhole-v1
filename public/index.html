@@ -21,6 +21,7 @@
     <input type="text" id="searchQuery" name="q" required>
     <button type="submit">Search</button>
   </form>
+  <div id="custom-cursor"></div>
   <script>
     function toggleSettings() {
       var settingsContainer = document.getElementById('settings-container');
@@ -37,6 +38,15 @@
         // Implement actions when cloaking is disabled
       }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.getElementById('custom-cursor');
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      });
+    });
   </script>
 </body>
 </html>
+
