@@ -16,9 +16,9 @@
       <input type="checkbox" id="cloakingCheckbox" onchange="toggleCloaking()">
     </label>
   </div>
-  <form action="/search" method="get"> <!-- Change the action to /search -->
-    <label for="searchQuery">Search:</label>
-    <input type="text" id="searchQuery" name="q" required>
+  <form action="/search" method="get">
+    <label for="customUrl">Search URL:</label>
+    <input type="text" id="customUrl" name="url" placeholder="Enter custom URL" required>
     <button type="submit">Search</button>
   </form>
   <div id="custom-cursor"></div>
