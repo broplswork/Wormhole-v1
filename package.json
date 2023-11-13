@@ -10,7 +10,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "http-proxy-middleware": "^1.1.0"
-    // Add other dependencies as needed
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
