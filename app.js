@@ -19,13 +19,15 @@ app.use('/search', (req, res) => {
 
   let target = '';
   if (searchEngine === 'bing') {
-    target = 'https://www.bing.com/search?q=';
+    target = 'https://www.bing.com';
   } else {
-    target = 'https://www.google.com/search?q=';
+    target = 'https://www.google.com';
   }
 
-  req.url = target + encodeURIComponent(targetUrl);
-  proxyMiddleware(req, res, (err) => {
+  proxyMiddleware({
+    target: target,
+    changeOrigin: true,
+  })(req, res, (err) => {
     if (err) {
       console.error(err);
       res.status(500).send('Proxy error');
