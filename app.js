@@ -1,23 +1,33 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
+const url = require('url'); // Import the 'url' module for URL validation
 
 const app = express();
 
-// Replace the target URL with the new proxy link
-const targetUrl = 'https://www.google.com/?safe=active&ssui=on';
-
 // Create a proxy middleware
 const proxyMiddleware = createProxyMiddleware({
-  target: targetUrl,
   changeOrigin: true, // Needed for virtual hosted sites
-  pathRewrite: {
-    [`^/proxy`]: '', // Remove the /proxy prefix when forwarding requests
-  },
 });
 
-// Use the proxy middleware
-app.use('/proxy', proxyMiddleware);
+// Use the proxy middleware for all routes under /search
+app.use('/search', (req, res) => {
+  const targetUrl = req.query.url;
+
+  // Validate the user-input URL
+  if (!isValidUrl(targetUrl)) {
+    res.status(400).send('Invalid URL');
+    return;
+  }
+
+  // Proxy the request to the specified URL
+  proxyMiddleware(req, res, (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Proxy error');
+    }
+  });
+});
 
 // Serve static files from the public directory
 app.use(express.static('public'));
@@ -25,15 +35,6 @@ app.use(express.static('public'));
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-// Set up the route for handling search requests
-app.get('/search', (req, res) => {
-  // Extract the search query from the request parameters
-  const searchQuery = req.query.q;
-
-  // Forward the search query as part of the proxy URL
-  res.redirect(`/proxy?q=${searchQuery}`);
-});
 
 // Set up the default route
 app.get('/', (req, res) => {
@@ -46,3 +47,13 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
+// Function to validate a URL
+function isValidUrl(userInput) {
+  try {
+    const parsedUrl = new URL(userInput);
+    // Add more validation if needed
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
