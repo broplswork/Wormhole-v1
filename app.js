@@ -26,6 +26,15 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files (e.g., CSS, JS)
 app.use(express.static('public'));
 
+// Set up the route for handling search requests
+app.get('/search', (req, res) => {
+  // Extract the search query from the request parameters
+  const searchQuery = req.query.q;
+
+  // Forward the search query as part of the proxy URL
+  res.redirect(`/proxy?q=${searchQuery}`);
+});
+
 // Set up the default route
 app.get('/', (req, res) => {
   res.render('index');
