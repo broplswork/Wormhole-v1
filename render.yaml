@@ -1,5 +1,6 @@
 services:
-  - type: web
-    name: proxy-search
+  - name: web
+    env:
+      NODE_ENV: production
     buildCommand: npm install
     startCommand: npm start
