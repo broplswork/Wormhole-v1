@@ -1,5 +1,6 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const path = require('path');
 
 const app = express();
 
@@ -18,12 +19,16 @@ const proxyMiddleware = createProxyMiddleware({
 // Use the proxy middleware
 app.use('/proxy', proxyMiddleware);
 
-// Serve static files (e.g., HTML, CSS, JS)
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files (e.g., CSS, JS)
 app.use(express.static('public'));
 
 // Set up the default route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.render('index');
 });
 
 // Start the server
