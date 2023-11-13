@@ -4,15 +4,11 @@
   "description": "Proxy search engine",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "http-proxy-middleware": "^1.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
   },
   "engines": {
     "node": ">=14.0.0"
