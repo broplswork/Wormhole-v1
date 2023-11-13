@@ -4,8 +4,8 @@ const path = require('path');
 
 const app = express();
 
-// Define the target URL to proxy requests to
-const targetUrl = 'http://www.example.com';
+// Replace the target URL with the new proxy link
+const targetUrl = 'https://www.google.com/?safe=active&ssui=on';
 
 // Create a proxy middleware
 const proxyMiddleware = createProxyMiddleware({
@@ -36,3 +36,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
