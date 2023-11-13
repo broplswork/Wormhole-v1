@@ -35,8 +35,9 @@ app.use('/search', (req, res) => {
 
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
 
 app.get('/', (req, res) => {
   res.render('index');
