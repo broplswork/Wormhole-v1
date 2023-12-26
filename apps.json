@@ -1,23 +1,17 @@
-{
-  "name": "Godly proxies v4",
-  "description": "A simple web proxy",
-  "image": "heroku/nodejs",
-  "addons": [],
-  "buildpacks": [
+[
     {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+        "name": "Geforcenow",
+        "url": "https://play.geforcenow.com/",
+        "logo": "https://i.ebayimg.com/images/g/uGcAAOSwwRtldaHB/s-l1600.jpg"
+    },
+    {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/",
+        "logo": "https://example.com/youtube-logo.png"
+    },
+    {
+        "name": "Twitter",
+        "url": "https://twitter.com/",
+        "logo": "https://example.com/twitter-logo.png"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "scripts": {
-    "start": "npm start"
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Free"
-    }
-  }
-}
+]
