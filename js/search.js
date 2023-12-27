@@ -1,38 +1,38 @@
-function visit() {
-    const inputUrl = document.getElementById('urlInput').value;
-    const proxyUrl = 'https://proxc.minoa.cat/?link=' + encodeURIComponent(btoa(inputUrl));
-    const proxyFrame = document.getElementById('proxyFrame');
-    proxyFrame.src = proxyUrl;
+"use strict";
+
+function search(input, template) {
+  try {
+    // input is a valid URL:
+    // eg: https://example.com, https://example.com/test?q=param
+    return new URL(input).toString();
+  } catch (err) {
+    // input was not a valid URL
+  }
+
+  try {
+    // input is a valid URL when http:// is added to the start:
+    // eg: example.com, https://example.com/test?q=param
+    const url = new URL(`http://${input}`);
+    // only if the hostname has a TLD/subdomain
+    if (url.hostname.includes(".")) return url.toString();
+  } catch (err) {
+    // input was not valid URL
+  }
+
+  // input may have been a valid URL, however the hostname was invalid
+
+  // Attempts to convert the input to a fully qualified URL have failed
+  // Treat the input as a search query
+  return template.replace("%s", encodeURIComponent(input));
 }
 
-fetch('apps.json')
-    .then(response => response.json())
-    .then(data => {
-        const apps = data;
+// Your other existing code may go here
+// ...
 
-        function displayApps() {
-            const appsContainer = document.querySelector('.apps-section');
+// Example usage within your existing codebase
+// For instance, when handling user input from your site's search bar or URL input
+const userInput = document.getElementById('urlInput').value; // Get user input
+const templateURL = "https://www.example.com/search?q=%s"; // Your website's search template URL
 
-            apps.forEach(app => {
-                const appLink = document.createElement('a');
-                appLink.href = '#';
-                appLink.textContent = app.name;
-                appsContainer.appendChild(appLink);
-
-                const appLogo = document.createElement('img');
-                appLogo.src = app.logo;
-                appLogo.alt = `${app.name} Logo`;
-                appLink.appendChild(appLogo);
-
-                appLink.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const proxyUrl = 'https://proxc.minoa.cat/?link=' + encodeURIComponent(btoa(app.url));
-                    const proxyFrame = document.getElementById('proxyFrame');
-                    proxyFrame.src = proxyUrl;
-                });
-            });
-        }
-
-        displayApps();
-    })
-    .catch(error => console.error('Error fetching apps data:', error));
+const result = search(userInput, templateURL);
+console.log("Result:", result); // Output the resulting URL or search query
