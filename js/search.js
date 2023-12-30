@@ -22,8 +22,15 @@ function search(input, template) {
   // input may have been a valid URL, however the hostname was invalid
 
   // Attempts to convert the input to a fully qualified URL have failed
-  // Treat the input as a search query
-  return template.replace("%s", encodeURIComponent(input));
+  // Treat the input as a search query using Google or Bing
+  const googleTemplate = "https://www.google.com/search?q=%s";
+  const bingTemplate = "https://www.bing.com/search?q=%s";
+
+  if (input.trim() === "") {
+    return template.replace("%s", encodeURIComponent("")); // Return template with an empty query
+  } else {
+    return template.replace("%s", encodeURIComponent(input)); // Use the provided template
+  }
 }
 
 // Your other existing code may go here
