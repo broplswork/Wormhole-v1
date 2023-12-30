@@ -1,6 +1,6 @@
 function visit() {
     const inputUrl = document.getElementById('urlInput').value;
-    const proxyUrl = 'https://proxc.minoa.cat/?link=' + encodeURIComponent(btoa(inputUrl));
+    const proxyUrl = 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl);
     const proxyFrame = document.getElementById('proxyFrame');
     proxyFrame.src = proxyUrl;
 }
@@ -26,7 +26,7 @@ fetch('apps.json')
 
                 appLink.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const proxyUrl = 'https://proxc.minoa.cat/?link=' + encodeURIComponent(btoa(app.url));
+                    const proxyUrl = 'https://www.bing.com/search?q=' + encodeURIComponent(app.url);
                     const proxyFrame = document.getElementById('proxyFrame');
                     proxyFrame.src = proxyUrl;
                 });
@@ -36,4 +36,3 @@ fetch('apps.json')
         displayApps();
     })
     .catch(error => console.error('Error fetching apps data:', error));
-
