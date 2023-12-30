@@ -2,7 +2,7 @@
     {
         "name": "Geforcenow",
         "url": "https://play.geforcenow.com/",
-        "logo": https://example.com/geforcenow-logo.png
+        "logo": "https://example.com/geforcenow-logo.png"
     },
     {
         "name": "YouTube",
