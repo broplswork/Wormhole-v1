@@ -1,31 +1,34 @@
-body,
-header {
-    margin: 0;
-    padding: 0;
+/* Aligning search bar and title in the middle */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black; /* Setting a black background */
+  color: white; /* Setting text color to white for better visibility */
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .title-container {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.title {
-    margin: 0;
+/* Style for app links */
+.apps-section a {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
 }
 
-.description {
-    margin-top: 5px;
-    font-style: italic;
-}
-
-.apps-section {
-    display: flex;
-    gap: 10px;
+.apps-section a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
