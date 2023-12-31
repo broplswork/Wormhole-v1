@@ -1,5 +1,10 @@
 "use strict";
-
+/**
+ *
+ * @param {string} input
+ * @param {string} template Template for a search query.
+ * @returns {string} Fully qualified URL
+ */
 function search(input, template) {
   try {
     // input is a valid URL:
@@ -22,24 +27,6 @@ function search(input, template) {
   // input may have been a valid URL, however the hostname was invalid
 
   // Attempts to convert the input to a fully qualified URL have failed
-  // Treat the input as a search query using Google or Bing
-  const googleTemplate = "https://www.google.com/search?q=%s";
-  const bingTemplate = "https://www.bing.com/search?q=%s";
-
-  if (input.trim() === "") {
-    return template.replace("%s", encodeURIComponent("")); // Return template with an empty query
-  } else {
-    return template.replace("%s", encodeURIComponent(input)); // Use the provided template
-  }
+  // Treat the input as a search query
+  return template.replace("%s", encodeURIComponent(input));
 }
-
-// Your other existing code may go here
-// ...
-
-// Example usage within your existing codebase
-// For instance, when handling user input from your site's search bar or URL input
-const userInput = document.getElementById('urlInput').value; // Get user input
-const templateURL = "https://www.example.com/search?q=%s"; // Your website's search template URL
-
-const result = search(userInput, templateURL);
-console.log("Result:", result); // Output the resulting URL or search query
