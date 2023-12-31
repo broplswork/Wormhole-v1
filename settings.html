@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site Settings</title>
+    <style>
+        /* Add some styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Site Settings</h1>
+    <p>This section allows you to toggle Cloak Mode for the site.</p>
+    <button id="toggleButton">Toggle Cloak Mode</button>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            // Change the page to about:blank or about:cloak.html based on the current URL
+            if (location.href !== 'about:blank') {
+                location.href = 'about:blank';
+            } else {
+                location.href = 'about:cloak.html';
+            }
+        });
+    </script>
+</body>
+</html>
