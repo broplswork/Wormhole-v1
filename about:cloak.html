@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Cloak</title>
+    <style>
+        /* Add some styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>About:Cloak</h1>
+    <p>This page is in cloak mode.</p>
+    <p>You can turn off Cloak Mode below.</p>
+    <button onclick="turnOffCloak()">Turn Off Cloak Mode</button>
+
+    <script>
+        function turnOffCloak() {
+            // Change the page back to about:blank
+            window.location.href = 'about:blank';
+        }
+    </script>
+</body>
+</html>
