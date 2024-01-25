@@ -1,11 +1,11 @@
 function visit() {
     const inputUrl = document.getElementById('urlInput').value;
-    const proxyUrl = 'https://godlyroundrobin.ddns.net/service/' + encodeURIComponent(inputUrl);
+    const proxyUrl = '/service/' + encodeURIComponent(inputUrl);
     const proxyFrame = document.getElementById('proxyFrame');
     proxyFrame.src = proxyUrl;
 }
 
-fetch('https://godlyroundrobin.ddns.net/service/apps.json')
+fetch('/service/apps.json')
     .then(response => response.json())
     .then(data => {
         const apps = data;
@@ -21,7 +21,7 @@ fetch('https://godlyroundrobin.ddns.net/service/apps.json')
 
                 appLink.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const proxyUrl = 'https://godlyroundrobin.ddns.net/service/' + encodeURIComponent(app.url);
+                    const proxyUrl = '/service/' + encodeURIComponent(app.url);
                     const proxyFrame = document.getElementById('proxyFrame');
                     proxyFrame.src = proxyUrl;
                 });
