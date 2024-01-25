@@ -133,7 +133,7 @@ function hostnameErrorTemplate(fetchedURL, bareServer) {
  * @param {string} title
  * @param {string} code
  * @param {string} id
- * @param {string} message
+    * @param {string} message
  * @param {string} trace
  * @param {string} fetchedURL
  * @param {string} bareServer
