@@ -4,28 +4,7 @@
     <meta charset="UTF-8">
     <title>Site Settings</title>
     <style>
-        /* Add some styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
+        /* Add your existing styles here */
     </style>
 </head>
 <body>
@@ -33,6 +12,25 @@
     <p>This section allows you to toggle Cloak Mode for the site.</p>
     <button id="toggleButton">Toggle Cloak Mode</button>
 
+    <h2>Search:</h2>
+    <input type="text" id="searchInput" placeholder="Enter search query">
+    <button id="searchButton">Search</button>
+
+    <div id="additionalSettings">
+        <h2>Additional Settings:</h2>
+        <label for="themeSelector">Select Theme:</label>
+        <select id="themeSelector">
+            <option value="light">Light Theme</option>
+            <option value="dark">Dark Theme</option>
+        </select>
+
+        <label for="fontSize">Adjust Font Size:</label>
+        <input type="range" id="fontSize" min="10" max="24" step="1" value="16">
+
+        <p>More settings can be added here...</p>
+    </div>
+
+    <script src="search.js"></script>
     <script>
         document.getElementById('toggleButton').addEventListener('click', function() {
             // Change the page to about:blank or about:cloak.html based on the current URL
@@ -41,6 +39,32 @@
             } else {
                 location.href = 'about:cloak.html';
             }
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            // Get the search input and template from the user
+            const searchInput = document.getElementById('searchInput').value;
+            const templateURL = "https://www.example.com/search?q=%s"; // Replace with your website's search template URL
+
+            // Use the search function to generate the search URL
+            const result = search(searchInput, templateURL);
+            console.log("Search Result:", result);
+
+            // You can redirect to the search result URL if needed
+            // window.location.href = result;
+        });
+
+        // Additional settings handling (just an example)
+        const themeSelector = document.getElementById('themeSelector');
+        const fontSizeInput = document.getElementById('fontSize');
+
+        themeSelector.addEventListener('change', function() {
+            document.body.style.backgroundColor = themeSelector.value === 'dark' ? '#333' : '#fff';
+            document.body.style.color = themeSelector.value === 'dark' ? '#fff' : '#333';
+        });
+
+        fontSizeInput.addEventListener('input', function() {
+            document.body.style.fontSize = fontSizeInput.value + 'px';
         });
     </script>
 </body>
