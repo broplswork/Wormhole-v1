@@ -1,17 +1,26 @@
 [
-    {
-        "name": "GeForce NOW",
-        "logo": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-now/global-nav/geforce-now.svg",
-        "url": "https://play.geforcenow.com/"
-    },
-    {
-        "name": "Twitter",
-        "logo": "https://abs.twimg.com/responsive-web/web/icon-ios.8ea219d4.png",
-        "url": "https://twitter.com/"
-    },
-    {
-        "name": "YouTube",
-        "logo": "https://www.youtube.com/s/desktop/ecc68de3/img/favicon_48.png",
-        "url": "https://www.youtube.com/"
-    }
+  {
+    "name": "Google Search",
+    "url": "https://www.google.com/"
+  },
+  {
+    "name": "Bing Search",
+    "url": "https://www.bing.com/"
+  },
+  {
+    "name": "DuckDuckGo Search",
+    "url": "https://duckduckgo.com/"
+  },
+  {
+    "name": "Yahoo Search",
+    "url": "https://search.yahoo.com/"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/"
+  },
+  {
+    "name": "Wikipedia",
+    "url": "https://www.wikipedia.org/"
+  }
 ]
