@@ -23,7 +23,7 @@
             <button onclick="visit()">Go</button>
         </div>
 
-        <iframe id="proxyFrame"></iframe>
+        <iframe id="proxyFrame" src=""></iframe>
     </main>
 
     <footer>
@@ -35,13 +35,6 @@
 
     <script src="apps.js"></script>
     <script src="search.js"></script>
-    <script src="uv.bundle.js"></script>
-    <script src="uv.config.js"></script>
-    <script src="uv.sw.js"></script>
-    <script>
-        const sw = new UVServiceWorker(__uv$config);
-        document.getElementById('proxyFrame').addEventListener('load', () => sw.initialize());
-    </script>
 </body>
 
 </html>
