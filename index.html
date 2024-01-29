@@ -15,9 +15,39 @@
             <p class="description">New Rising Proxy Reach New Heights</p>
         </div>
     </header>
-    <style>
-        body {
-            background-image: url('background.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: co
+
+    <main>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Enter your search query">
+            <button type="submit">Search</button>
+        </form>
+        <iframe id="proxyFrame" src=""></iframe>
+    </main>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script src="search.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchForm = document.getElementById("searchForm");
+            const searchInput = document.getElementById("searchInput");
+            const proxyFrame = document.getElementById("proxyFrame");
+
+            searchForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const searchQuery = searchInput.value.trim();
+                const template = "https://www.example.com/search?q=%s"; // Change this to your desired search template
+
+                const url = search(searchQuery, template);
+
+                // Update iframe source with the generated URL
+                proxyFrame.src = url;
+            });
+        });
+    </script>
+</body>
+
+</html>
