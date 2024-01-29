@@ -4,9 +4,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: black; /* Setting a black background */
-  color: white; /* Setting text color to white for better visibility */
+  min-height: 100vh; /* Change height to min-height to ensure it expands if content exceeds viewport */
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -35,8 +35,8 @@ header {
 
 /* Style for the iframe */
 #proxyFrame {
-  width: 100%; /* Set the iframe width to 100% of its container */
-  height: 70vh; /* Set the height to 70% of the viewport height */
-  border: none; /* Remove the border */
-  background-color: #222; /* Set a dark background color */
+  width: 100%;
+  border: none;
+  background-color: #222;
+  flex: 1; /* Allow the iframe to grow to fill remaining space */
 }
