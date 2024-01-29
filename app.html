@@ -8,12 +8,6 @@
     content="Wormhole v1 is a lighting-fast proxy service built for school. Our services are fast, reliable, and completely free." />
   <meta name="keywords"
     content="unblocker, Wormhole v1, bypasser, school, hacks, proxy, ultraviolet, discord unblocked, nodejs, github, render, heroku" />
-  <link rel="stylesheet" href="/assets/css/app.css">
-  <link rel="stylesheet" href="/assets/css/rightclick.css">
-  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/323255fd4e.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script>
     var pagetitle = "Wormhole v1";
     var newTitle = "Wormhole v1";
@@ -75,40 +69,12 @@ if (isLoggedIn === 'correct') {
 </head>
 
 <body class="bg">
-  <div id="contextMenu" class="context-menu">
-    <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)">Tab Cloak</div>
-    <div class="context-submenu">
-      <div class="context-menu-item" onclick="tabCloak()">Enable</div>
-      <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
-    </div>
-    <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)">Authentication</div>
-    <div class="context-submenu">
-      <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
-      <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
-    </div>
-    <div class="context-menu-item" onclick="openWindow()">About:Blank Cloak</div>
-    <div class="context-menu-item" onclick="visitLastSite()">Visit Last Site</div>
-  </div>
-
-  <nav id="mytopnav">
-    <br>
-    <!-- removed blanker cuz that's in the right click menu -->
-    <a href="/gms/"><button class="button-6">Games</button></a>
-    <a href="/apps/"><button class="button-6" class="fa-solid fa-user">Apps</button></a>
-    <a href="/app"><button class="button-6">Home</button></a>
-    <p style="font-size:25px;"><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Wormhole v1</p>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </nav>
-
-  <div style="padding-left:16px; text-align: center; color: white;margin:80px;">
+    <div style="padding-left:16px; text-align: center; color: white;margin:80px;">
     <div>
       <br>
       <form id="searchbar">
         <input type="text" name="url" class="form__input" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;"
           placeholder="Type URL or search query">
-        <p style="font-size:14px;">Right-Click to access more features</p>
       </form>
     </div>
     <div id="section">
